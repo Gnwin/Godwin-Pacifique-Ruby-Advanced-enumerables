@@ -1,14 +1,12 @@
 def my_each
+  arr = %w[h e l l o]
+  max_length = arr.length
 
-	arr = ['h', 'e', 'l', 'l', 'o']
-	max_length = arr.length
-
-	# loop do
-		max_length.times do |i|
-			yield(arr[i])
-		end
-	# end
-
+  # loop do
+  max_length.times do |i|
+    yield(arr[i])
+  end
+  # end
 end
 
-my_each {|e| puts e}
+my_each { |e| puts e }
