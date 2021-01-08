@@ -44,7 +44,7 @@ class Array
 			ary = []
 			idx = 0
 			loop do
-				if yield(self[idx]) == true;
+				if yield(self[idx]) == true
 					ary << self[idx]
 				end
 				idx = idx + 1
@@ -55,9 +55,35 @@ class Array
 			p self
 		end
 	end
+
+	def my_all?
+		iterate = self.length
+		if block_given?
+			ary = []
+			idx = 0
+			loop do
+				ary << yield(self[idx])
+				idx += 1
+				break if idx == iterate;
+			end
+			all = true
+			iterate.times do |idx|
+				if ary[idx] == false
+					all = false
+					break
+				end
+			end
+			all = all == false ? false : true ;
+			p all
+		else
+			p true
+		end
+	end
 end
 
 arr = [1, 2, 3, 4, 5]
 arr.my_each { |e| puts e }
 arr.my_each_with_index { |v, i| puts "#{v} and #{i}" }
 arr.my_select { |e| e != 2 }
+arr.my_all? { |e| e == 2 }
+%w[ant bear cat].my_all? { |word| word.length >= 3 }
