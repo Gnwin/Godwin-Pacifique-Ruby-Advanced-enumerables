@@ -167,6 +167,23 @@ class Array
 		p ary
 		# ary
 	end
+
+	# 9.
+	def my_inject
+		iterate = self.length
+		if block_given?;
+			sum = 0 
+			idx = 0
+			loop do;
+				sum = yield(sum, self[idx])
+				idx += 1
+				break if idx == iterate;
+			end
+			p sum
+		else
+			p sum
+		end
+	end
 end
 
 arr = [1, 2, 3, 4, 5]
@@ -180,3 +197,4 @@ arr.my_all? { |e| e == 2 }
 arr.my_count{ |x| x%2==0 } #=> 3
 arr.my_count
 arr.my_map { |e| e + 2 }
+arr.my_inject { |sum, n| sum + n }
