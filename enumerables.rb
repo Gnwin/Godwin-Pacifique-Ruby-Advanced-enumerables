@@ -1,8 +1,8 @@
 class Array
-  # def my_each
+  # def my_each;
   #   max_length = self.length
-  #   if block_given?
-  #     max_length.times do |i|
+  #   if block_given?;
+  #     max_length.times do |i|;
   #       yield(self[i])
   #     end
   #   else
@@ -36,9 +36,28 @@ class Array
     else
       p self
     end
-  end
+	end
+	
+	def my_select
+		iterate = self.length
+		if block_given?
+			ary = []
+			idx = 0
+			loop do
+				if yield(self[idx]) == true;
+					ary << self[idx]
+				end
+				idx = idx + 1
+				break if idx == iterate;
+			end
+			p ary
+		else
+			p self
+		end
+	end
 end
 
 arr = [1, 2, 3, 4, 5]
-# arr.my_each { |e| puts e }
+arr.my_each { |e| puts e }
 arr.my_each_with_index { |v, i| puts "#{v} and #{i}" }
+arr.my_select { |e| e != 2 }
