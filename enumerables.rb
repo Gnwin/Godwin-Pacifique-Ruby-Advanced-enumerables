@@ -109,6 +109,31 @@ class Array
 		end
 	end
 
+	# 6.
+	def my_none?;
+		iterate = self.length
+		if block_given?;
+			ary = []
+			idx = 0
+			loop do;
+				ary << yield(self[idx])
+				idx += 1
+				break if idx == iterate;
+			end
+			none = true
+			iterate.times do |idx|;
+				if ary[idx] == true
+					none = false
+					break
+				end
+			end
+			none = none == true ? true : false ;
+			p none
+		else
+			p true
+		end
+	end
+
 	# 8.
 	def my_map
 		ary = []  
