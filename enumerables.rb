@@ -152,4 +152,5 @@ arr.my_select { |e| e != 2 }
 arr.my_all? { |e| e == 2 }
 %w[ant bear cat].my_all? { |word| word.length >= 3 }
 %w[ant bear cat].my_any? { |word| word.length >= 4 }
+%w{ant bear cat}.my_none? { |word| word.length == 5 } #=> true
 arr.my_map { |e| e + 2 }
