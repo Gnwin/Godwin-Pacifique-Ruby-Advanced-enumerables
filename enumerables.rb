@@ -134,6 +134,30 @@ class Array
 		end
 	end
 
+	# 7.
+	def my_count;
+		iterate = self.length
+		if block_given?;
+			ary = []
+			idx = 0
+			loop do;
+				ary << yield(self[idx])
+				idx += 1
+				break if idx == iterate;
+			end
+			count = 0
+			iterate.times do |idx|;
+				if ary[idx] == true
+					count += 1
+				end
+			end
+			p count
+		else
+			count = self.length
+			p count
+		end
+	end
+
 	# 8.
 	def my_map
 		ary = []  
@@ -153,4 +177,6 @@ arr.my_all? { |e| e == 2 }
 %w[ant bear cat].my_all? { |word| word.length >= 3 }
 %w[ant bear cat].my_any? { |word| word.length >= 4 }
 %w{ant bear cat}.my_none? { |word| word.length == 5 } #=> true
+arr.my_count{ |x| x%2==0 } #=> 3
+arr.my_count
 arr.my_map { |e| e + 2 }
