@@ -10,6 +10,7 @@ class Array
   #   end
 	# end
 	
+	# 1.
 	def my_each
   	iterate = self.length
   	if block_given?
@@ -24,6 +25,7 @@ class Array
   	end
   end
 
+	# 2.
   def my_each_with_index
     iterate = self.length
     if block_given?
@@ -38,6 +40,7 @@ class Array
     end
 	end
 	
+	# 3.
 	def my_select
 		iterate = self.length
 		if block_given?
@@ -56,6 +59,7 @@ class Array
 		end
 	end
 
+	# 4.
 	def my_all?
 		iterate = self.length
 		if block_given?
@@ -80,6 +84,7 @@ class Array
 		end
 	end
 
+	# 8.
 	def my_map
 		ary = []  
 		self.my_each do |elem|
