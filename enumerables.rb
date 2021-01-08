@@ -84,6 +84,31 @@ class Array
 		end
 	end
 
+	# 5.
+	def my_any?;
+		iterate = self.length
+		if block_given?;
+			ary = []
+			idx = 0
+			loop do;
+				ary << yield(self[idx])
+				idx += 1
+				break if idx == iterate;
+			end
+			any = false
+			iterate.times do |idx|;
+				if ary[idx] == true
+					any = true
+					break
+				end
+			end
+			any = any == true ? true : false ;
+			p any
+		else
+			p true
+		end
+	end
+
 	# 8.
 	def my_map
 		ary = []  
@@ -101,4 +126,5 @@ arr.my_each_with_index { |v, i| puts "#{v} and #{i}" }
 arr.my_select { |e| e != 2 }
 arr.my_all? { |e| e == 2 }
 %w[ant bear cat].my_all? { |word| word.length >= 3 }
+%w[ant bear cat].my_any? { |word| word.length >= 4 }
 arr.my_map { |e| e + 2 }
