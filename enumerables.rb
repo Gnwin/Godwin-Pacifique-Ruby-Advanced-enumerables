@@ -1,8 +1,8 @@
 class Array
-  # def my_each;
+  # def my_each
   #   max_length = self.length
-  #   if block_given?;
-  #     max_length.times do |i|;
+  #   if block_given?
+  #     max_length.times do |i|
   #       yield(self[i])
   #     end
   #   else
