@@ -79,6 +79,15 @@ class Array
 			p true
 		end
 	end
+
+	def my_map
+		ary = []  
+		self.my_each do |elem|
+			ary << yield(elem)
+		end	
+		p ary
+		# ary
+	end
 end
 
 arr = [1, 2, 3, 4, 5]
@@ -87,3 +96,4 @@ arr.my_each_with_index { |v, i| puts "#{v} and #{i}" }
 arr.my_select { |e| e != 2 }
 arr.my_all? { |e| e == 2 }
 %w[ant bear cat].my_all? { |word| word.length >= 3 }
+arr.my_map { |e| e + 2 }
