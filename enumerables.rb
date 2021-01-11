@@ -1,4 +1,4 @@
-class Array
+module Enumerable
   # def my_each
   #   max_length = self.length
   #   if block_given?
@@ -21,7 +21,7 @@ class Array
   			break if idx == iterate;
   		end
   	else
-  		p self
+  		self
   	end
   end
 
@@ -36,7 +36,7 @@ class Array
         break if idx == iterate;
       end
     else
-      p self
+      self
     end
 	end
 	
@@ -47,15 +47,15 @@ class Array
 			ary = []
 			idx = 0
 			loop do
-				if yield(self[idx]) == true
+				if yield(self[idx])
 					ary << self[idx]
 				end
-				idx = idx + 1
+				idx += 1
 				break if idx == iterate;
 			end
-			p ary
+			ary
 		else
-			p self
+			self
 		end
 	end
 
@@ -78,9 +78,9 @@ class Array
 				end
 			end
 			all = all == false ? false : true ;
-			p all
+			all
 		else
-			p true
+			true
 		end
 	end
 
@@ -103,9 +103,9 @@ class Array
 				end
 			end
 			any = any == true ? true : false ;
-			p any
+			any
 		else
-			p true
+			true
 		end
 	end
 
@@ -128,9 +128,9 @@ class Array
 				end
 			end
 			none = none == true ? true : false ;
-			p none
+			none
 		else
-			p true
+			true
 		end
 	end
 
@@ -151,10 +151,10 @@ class Array
 					count += 1
 				end
 			end
-			p count
+			count
 		else
 			count = self.length
-			p count
+			count
 		end
 	end
 
@@ -164,8 +164,7 @@ class Array
 		self.my_each do |elem|
 			ary << yield(elem)
 		end	
-		p ary
-		# ary
+		ary
 	end
 
 	# 9.
@@ -179,22 +178,23 @@ class Array
 				idx += 1
 				break if idx == iterate;
 			end
-			p sum
+			sum
 		else
-			p sum
+			sum
 		end
 	end
 end
 
+
 arr = [1, 2, 3, 4, 5]
-arr.my_each { |e| puts e }
-arr.my_each_with_index { |v, i| puts "#{v} and #{i}" }
-arr.my_select { |e| e != 2 }
-arr.my_all? { |e| e == 2 }
-%w[ant bear cat].my_all? { |word| word.length >= 3 }
-%w[ant bear cat].my_any? { |word| word.length >= 4 }
-%w{ant bear cat}.my_none? { |word| word.length == 5 } #=> true
-arr.my_count{ |x| x%2==0 } #=> 3
-arr.my_count
-arr.my_map { |e| e + 2 }
-arr.my_inject { |sum, n| sum + n }
+# arr.my_each { |e| e }
+# arr.my_each_with_index { |v, i| puts "#{v} and #{i}" }
+# arr.my_select { |e| e != 2 }
+# arr.my_all? { |e| e == 2 }
+# %w[ant bear cat].my_all? { |word| word.length >= 3 }
+# %w[ant bear cat].my_any? { |word| word.length >= 4 }
+# %w{ant bear cat}.my_none? { |word| word.length == 5 } #=> true
+# arr.my_count{ |x| x%2==0 } #=> 3
+# arr.my_count
+# arr.my_map { |e| e + 2 }
+# arr.my_inject { |sum, n| sum + n }

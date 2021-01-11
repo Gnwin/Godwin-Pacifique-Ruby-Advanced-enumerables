@@ -380,7 +380,8 @@ module Enumerable
   
   x=0
   array.my_each {|friend| puts friend }
-  array.each {|friend| puts friend }
+  # array.each {|friend| puts friend }
   
   # arr = array.my_select {|friend| friend != 'Allan'}
-  # puts arr
+	# puts arr
+	
