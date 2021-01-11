@@ -8,10 +8,6 @@ module Enumerable
         yield self[i]
         i += 1
       end
-      # array.my_each {|friend| puts friend } 
-      # array.my_each |friend| do
-      #   puts friend
-      # end
       self
     end
   end
@@ -35,7 +31,6 @@ module Enumerable
     else
       i = 0
       arr = []
-      # arr.select {|elmt| elmt !== 'one'}
       while i < self.size
         if yield self[i]
           arr << self[i]
@@ -368,8 +363,3 @@ module Enumerable
     end
   
   end
-
-array = ['Allan', 'Smith', 'Kasongo']
-
-puts array.my_each
-puts array.each
