@@ -1,15 +1,4 @@
-module Enumerable
-  # def my_each
-  #   max_length = self.length
-  #   if block_given?
-  #     max_length.times do |i|
-  #       yield(self[i])
-  #     end
-  #   else
-  #     p self
-  #   end
-	# end
-	
+module Enumerable	
 	# 1.
 	def my_each
   	iterate = self.length

@@ -1,6 +1,5 @@
-# rubocop:disable all
-
 module Enumerable
+	# 1.
     def my_each
       unless block_given?
         to_enum(__method__)
@@ -10,14 +9,11 @@ module Enumerable
           yield self[i]
           i += 1
         end
-        # array.my_each {|friend| puts friend } 
-        # array.my_each |friend| do
-        #   puts friend
-        # end
         self
       end
     end
-    
+		
+		# 2.
     def my_each_with_index
       unless block_given?
         to_enum(__method__)
