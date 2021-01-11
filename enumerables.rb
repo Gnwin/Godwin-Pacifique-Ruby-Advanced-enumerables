@@ -1,15 +1,27 @@
-# rubocop:disable all
-module Enumerable
-    def my_each
-      unless block_given?
-        to_enum(__method__)
-      else
-        i = 0
-        while i < self.size
-          yield self[i]
-          i += 1
-        end
-        self
+module Enumerable	
+
+	def my_each
+  	iterate = self.length
+  	if block_given?
+  		idx = 0
+  		loop do
+  			yield(self[idx])
+  			idx += 1
+  			break if idx == iterate;
+  		end
+  	else
+  		self
+  	end
+  end
+
+  def my_each_with_index
+    iterate = self.length
+    if block_given?
+      idx = 0
+      loop do
+        yield(self[idx], idx)
+        idx += 1
+        break if idx == iterate;
       end
     end
     
