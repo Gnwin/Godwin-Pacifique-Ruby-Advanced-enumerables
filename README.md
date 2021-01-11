@@ -1,43 +1,42 @@
-# Ruby::Advanced::Enumerables
+# The Advanced Enumerable
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/Ruby/Advanced/enumerables`. To experiment with that code, run `bin/console` for an interactive prompt.
+> In this project, we were building our own enumerable methods 
 
-TODO: Delete this and the text above, and describe your gem
+## PREREQUISITE
 
-## Installation
+- Install at least one code editor 
+- Install Ruby to execute the project
 
-Add this line to your application's Gemfile:
+## GETTING STARTED
 
-```ruby
-gem 'Ruby-Advanced-enumerables'
-```
+- clone the repository `$ git clone https://github.com/Gnwin/Ruby-Advanced-enumerables.git`
+- go to the project directory `$ cd Ruby-Advanced-enumerables`
+- Run the command `$ ruby enumerables.rb`
 
-And then execute:
+## Built With
 
-    $ bundle install
+- Ruby
 
-Or install it yourself as:
+## Live Demo
 
-    $ gem install Ruby-Advanced-enumerables
+[Live Demo Link](https://repl.it/@pacyL2K19/Enumerables#main.rb)
 
-## Usage
+## Authors 1
 
-TODO: Write usage instructions here
+👤 **Pacifique Linjanja**
 
-## Development
+- GitHub: [@pacyL2K19](https://github.com/pacyL2K19)
+- Twitter: [@PacifiqueLinja1](https://twitter.com/PacifiqueLinja1)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/pacifique-linjanja/)
 
-After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
+## Author 2
 
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and the created tag, and push the `.gem` file to [rubygems.org](https://rubygems.org).
+👤 **Godwin Nwachukwu**
 
-## Contributing
+- GitHub: [@Gnwin](https://github.com/Gnwin)
+- Twitter [@gmarxr](https://twitter.com/gmarxr)
+- LinkedIn: [Godwin Nwachukwu](https://www.linkedin.com/in/n-gwin/)
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/Ruby-Advanced-enumerables. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [code of conduct](https://github.com/[USERNAME]/Ruby-Advanced-enumerables/blob/master/CODE_OF_CONDUCT.md).
+##  Contributing
 
-## License
-
-The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
-
-## Code of Conduct
-
-Everyone interacting in the Ruby::Advanced::Enumerables project's codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/[USERNAME]/Ruby-Advanced-enumerables/blob/master/CODE_OF_CONDUCT.md).
+Contributions, issues, and feature requests are welcome!
